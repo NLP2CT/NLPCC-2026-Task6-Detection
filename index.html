@@ -3,27 +3,95 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>ShareTask 静态站点</title>
+    <title>NLPCC 2026 - Share Task 官网</title>
     <style>
+      :root {
+        --primary: #0b5fff;
+        --primary2: #6a5cff;
+        --primary3: #7c3aed;
+        --text: #0f172a;
+        --muted: #475569;
+        --border: rgba(15, 23, 42, 0.12);
+        --shadow: 0 14px 40px rgba(2, 6, 23, 0.08);
+        --card: #ffffff;
+      }
       body {
         margin: 0;
         font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, "Noto Sans", "PingFang SC",
           "Microsoft YaHei", sans-serif;
         line-height: 1.6;
-        color: #111;
-        background: #fafafa;
+        color: var(--text);
+        background:
+          radial-gradient(900px 420px at 12% 0%, rgba(11, 95, 255, 0.12), transparent 55%),
+          radial-gradient(800px 520px at 82% 18%, rgba(124, 58, 237, 0.10), transparent 50%),
+          #f6f8ff;
       }
       .wrap {
         max-width: 900px;
         margin: 0 auto;
         padding: 56px 20px;
       }
+      .page {
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 26px 20px 60px;
+      }
+
+      .topbar {
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        background: rgba(46, 109, 155, 0.8);
+        backdrop-filter: blur(10px);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.18);
+      }
+      .topbar-inner {
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 12px 20px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 16px;
+      }
+      .brand-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        font-weight: 800;
+        text-decoration: none;
+        color: var(--text);
+        letter-spacing: 0.2px;
+      }
+      .topbar .brand-link {
+        color: #ffffff;
+      }
+      .topbar-logo {
+        height: 34px;
+        width: auto;
+        display: block;
+      }
+      .logo-dot {
+        width: 12px;
+        height: 12px;
+        border-radius: 999px;
+        background: linear-gradient(135deg, var(--primary), var(--primary2) 45%, var(--primary3));
+        box-shadow: 0 10px 24px rgba(11, 95, 255, 0.25);
+      }
+      .topbar .langbar {
+        margin: 0;
+      }
       .hero {
-        background: linear-gradient(135deg, #0b5fff 0%, #6a5cff 45%, #7c3aed 100%);
+        background:
+          linear-gradient(135deg, rgba(11, 95, 255, 0.94) 0%, rgba(106, 92, 255, 0.92) 45%, rgba(124, 58, 237, 0.94) 100%),
+          url("img/banner_bg.webp");
+        background-size: cover, cover;
+        background-position: center, center;
+        background-repeat: no-repeat, no-repeat;
         color: #fff;
-        border-radius: 18px;
-        padding: 28px 24px;
-        box-shadow: 0 14px 30px rgba(11, 95, 255, 0.18);
+        border-radius: 22px;
+        padding: 36px 26px;
+        box-shadow: var(--shadow);
         position: relative;
         overflow: hidden;
       }
@@ -37,6 +105,19 @@
         border-radius: 999px;
         filter: blur(1px);
       }
+      .hero::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background:
+          radial-gradient(520px 220px at 20% 0%, rgba(255, 255, 255, 0.22), transparent 60%),
+          radial-gradient(420px 180px at 90% 20%, rgba(255, 255, 255, 0.16), transparent 55%);
+        pointer-events: none;
+      }
+      .hero > * {
+        position: relative;
+        z-index: 1;
+      }
       .brand {
         display: inline-flex;
         align-items: center;
@@ -44,6 +125,82 @@
         font-weight: 700;
         letter-spacing: 0.2px;
         margin-bottom: 10px;
+      }
+      .langbar {
+        display: flex;
+        justify-content: flex-end;
+        gap: 10px;
+        margin: 0 0 14px 0;
+      }
+      .langbtn {
+        appearance: none;
+        border: 1px solid rgba(0, 0, 0, 0.15);
+        background: #fff;
+        color: #000;
+        border-radius: 999px;
+        padding: 6px 14px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.2s ease;
+        font-size: 13px;
+      }
+      .langbtn[aria-pressed="true"] {
+        background: #000;
+        color: #fff;
+        border-color: #000;
+      }
+      .langbtn:hover:not([aria-pressed="true"]) {
+        background: #f8f9fa;
+        border-color: #000;
+      }
+      .tagline {
+        margin-top: 10px;
+        padding: 10px 12px;
+        background: rgba(255, 255, 255, 0.14);
+        border: 1px solid rgba(255, 255, 255, 0.18);
+        border-radius: 12px;
+        font-weight: 600;
+      }
+      .hero-meta {
+        margin-top: 14px;
+        padding-top: 14px;
+        border-top: 1px solid rgba(255, 255, 255, 0.18);
+      }
+      .hero-location {
+        font-weight: 800;
+        margin-bottom: 6px;
+      }
+      .hero-dates {
+        opacity: 0.95;
+        margin-bottom: 14px;
+      }
+      .cta-btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        text-decoration: none;
+        padding: 12px 16px;
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.95);
+        color: #0b5fff;
+        font-weight: 800;
+        border: 1px solid rgba(255, 255, 255, 0.45);
+        box-shadow: 0 16px 34px rgba(2, 6, 23, 0.20);
+        transition: transform 120ms ease, background 120ms ease;
+      }
+      .cta-btn:hover {
+        transform: translateY(-1px);
+        background: #fff;
+      }
+      .register-text {
+        margin: 10px 0 0 0;
+        color: rgba(255, 255, 255, 0.95);
+        font-size: 14px;
+      }
+      .hero .link {
+        color: rgba(255, 255, 255, 0.98);
+        text-decoration: underline;
+        text-underline-offset: 2px;
       }
       code {
         background: #f3f3f3;
@@ -53,7 +210,7 @@
       }
       .hero h1 {
         margin: 0 0 10px 0;
-        font-size: 30px;
+        font-size: 40px;
         line-height: 1.25;
       }
       .hero p {
@@ -73,71 +230,383 @@
         }
       }
       .card {
-        background: #fff;
-        border: 1px solid rgba(0, 0, 0, 0.08);
-        border-radius: 14px;
-        padding: 18px 18px;
-        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.04);
+        background: var(--card);
+        border: 1px solid var(--border);
+        border-radius: 18px;
+        padding: 24px 22px;
+        box-shadow: 0 10px 26px rgba(2, 6, 23, 0.05);
         min-height: 120px;
       }
       .card h2 {
-        margin: 0 0 8px 0;
-        font-size: 16px;
+        margin: 0 0 10px 0;
+        font-size: 18px;
       }
       .card p {
         margin: 0;
-        color: #333;
+        color: var(--text);
         font-size: 14px;
       }
+      .section {
+        margin-top: 18px;
+      }
+      .section h2 {
+        margin: 0 0 10px 0;
+        font-size: 18px;
+      }
+      .section p {
+        margin: 0 0 10px 0;
+        color: var(--text);
+        font-size: 14px;
+      }
+      .section .muted {
+        color: var(--muted);
+        font-size: 13px;
+      }
+      .org-list {
+        padding-left: 18px;
+        margin: 0;
+        color: var(--text);
+        font-size: 14px;
+      }
+      .org-list li {
+        margin: 8px 0;
+      }
+      .org-meta {
+        color: var(--muted);
+        font-size: 13px;
+      }
+      .org-logos {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 30px;
+        margin-top: 24px;
+        padding: 20px;
+        background: transparent;
+        flex-wrap: wrap;
+      }
+      .org-logo-item {
+        height: 55px;
+        display: flex;
+        align-items: center;
+      }
+      .org-logo-item img {
+        height: 100%;
+        width: auto;
+        object-fit: contain;
+        transition: all 0.3s ease;
+      }
+      .org-logo-item img:hover {
+        transform: scale(1.05);
+      }
+      .schedule-table {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 14px;
+        margin-top: 10px;
+      }
+      .schedule-table td {
+        padding: 10px 0;
+        border-bottom: 1px solid var(--border);
+      }
+      .schedule-table td:first-child {
+        font-weight: 700;
+        width: 160px;
+        color: var(--primary);
+        white-space: nowrap;
+        padding-right: 20px;
+      }
+      .schedule-table tr:last-child td {
+        border-bottom: none;
+      }
       .link {
-        color: #0b5fff;
+        color: var(--primary);
         text-decoration: none;
         font-weight: 600;
       }
       .footer {
         margin-top: 18px;
-        color: #666;
+        color: var(--muted);
         font-size: 13px;
         text-align: center;
+      }
+      @media (max-width: 720px) {
+        .topbar-inner {
+          padding: 10px 14px;
+        }
+        .page {
+          padding: 18px 14px 50px;
+        }
+        .hero h1 {
+          font-size: 30px;
+        }
+        .hero {
+          padding: 28px 16px;
+        }
+      }
+      .content {
+        display: none;
+      }
+      .content.active {
+        display: block;
       }
     </style>
   </head>
   <body>
-    <main class="wrap">
-      <section class="hero" aria-label="ShareTask Hero">
-        <div class="brand">ShareTask</div>
-        <h1>一个更清晰的静态站点入口</h1>
-        <p>
-          这个页面用于演示并启动 GitHub Pages 自动部署。你把真实的 ShareTask 静态页面文件放入仓库根目录后，
-          会由 Actions 自动更新线上内容。
-        </p>
-      </section>
+    <header class="topbar" aria-label="Top navigation">
+      <div class="topbar-inner">
+        <a class="brand-link" href="#" aria-label="NLPCC 2026">
+          <img class="topbar-logo" src="img/logo.svg" alt="NLPCC 2026 logo" loading="eager" />
+          <span>NLPCC 2026</span>
+        </a>
+        <div class="langbar" aria-label="Language switch">
+          <button id="btn-en" class="langbtn" type="button" aria-pressed="true">English</button>
+          <button id="btn-zh" class="langbtn" type="button" aria-pressed="false">中文</button>
+        </div>
+      </div>
+    </header>
 
-      <section class="grid" aria-label="Quick start">
-        <div class="card">
-          <h2>如何更新页面</h2>
-          <p>
-            直接修改/替换仓库根目录的 `index.html`（以及相关静态资源：`css/`、`js/`、`img/`）。
-          </p>
-        </div>
-        <div class="card">
-          <h2>自动部署</h2>
-          <p>
-            推送到 `main` 后会触发 workflow：`.github/workflows/pages.yml`，部署到 GitHub Pages。
-          </p>
-        </div>
-        <div class="card">
-          <h2>下一步</h2>
-          <p>
-            把你的 `sharetask` 静态网站内容拷贝进来即可。需要更复杂的构建流程（如 `npm run build`）也可以再扩展。
-          </p>
-        </div>
-      </section>
+    <main class="page">
 
-      <div class="footer">
-        如果你看到 404：先确认仓库 `Settings -> Pages` 已启用为 `GitHub Actions`，再等待一次 Actions 部署完成。
+      <!-- English (default) -->
+      <div id="content-en" class="content active">
+        <section class="hero" aria-label="ShareTask Hero">
+          <div class="brand">NLPCC 2026 Share Task: The Second Evaluation on LLM-Generated Text Detection</div>
+
+          <div class="hero-meta" aria-label="Conference schedule and registration">
+            <div class="hero-location">Macau, China</div>
+            <div class="hero-dates">November 3-5, 2026</div>
+            <a
+              class="cta-btn"
+              href="https://alidocs.dingtalk.com/notable/share/form/v018K4nyeZ1wGK0YnLb_dv19yqvsgs3oebp3pcjys_bUfwzOn"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Registration
+            </a>
+            <p class="register-text">
+              To register, please fill out the Shared Task Registration Form:
+              <a class="link" href="https://alidocs.dingtalk.com/notable/share/form/v018K4nyeZ1wGK0YnLb_dv19yqvsgs3oebp3pcjys_bUfwzOn" target="_blank" rel="noreferrer">
+                https://alidocs.dingtalk.com/notable/share/form/v018K4nyeZ1wGK0YnLb_dv19yqvsgs3oebp3pcjys_bUfwzOn
+              </a>
+            </p>
+            <p class="register-text">
+              Should you have any questions, please feel free to contact us at:
+              <a class="link" href="mailto:nlp2ct.junchao@gmail.com">nlp2ct.junchao@gmail.com</a>
+            </p>
+          </div>
+        </section>
+
+        <section class="section card" aria-label="Introduction">
+          <h2>Introduction</h2>
+          <p>
+            The rapid development of large language models (LLMs) has given rise to a series of challenges, including the generation of
+            disinformation, the spread of harmful content, and various forms of misuse. Against this backdrop, the efficient
+            discrimination between LLM-generated text and human-written text has become an urgent and critical research issue in the field
+            of natural language processing (NLP). While remarkable progress has been made, relevant research has largely focused on
+            English, systematic and technical exploration for the Chinese remain scarce. This shared task aims to fill this gap, build
+            more robust Chinese LLM-generated text detectors, and advance research and real-world applications in this field within the
+            Chinese.
+          </p>
+          <p>
+            Following the success of the 1st Shared Task on LLM-Generated Text Detection (NLPCC 2025), the 2nd Shared Task on LLM-Generated
+            Text Detection in 2026 features significant upgrades: the task formulation has been expanded from binary to ternary
+            classification. Specifically, in addition to distinguishing between human-written text and LLM-generated text, a new category
+            for identifying LLM-refined text has been introduced, which better aligns with real-world application scenarios of LLMs.
+            Participating teams are required to design and implement text detection algorithms based on the training data provided to
+            achieve accurate classification and will undergo rigorous stress testing.
+          </p>
+        </section>
+
+        <section class="section card" aria-label="Tentative Schedule">
+          <h2>Tentative Schedule</h2>
+          <table class="schedule-table">
+            <tr><td>March 20, 2026</td><td>Shared task announcement and call for participation</td></tr>
+            <tr><td>March 20, 2026</td><td>Registration opens</td></tr>
+            <tr><td>April 15, 2026</td><td>Release of detailed task guidelines and training data</td></tr>
+            <tr><td>May 25, 2026</td><td>Registration deadline</td></tr>
+            <tr><td>June 11, 2026</td><td>Test data release</td></tr>
+            <tr><td>June 20, 2026</td><td>Deadline for participants to submit results</td></tr>
+            <tr><td>June 30, 2026</td><td>Evaluation results released and call for system reports and conference papers</td></tr>
+          </table>
+        </section>
+
+        <section class="section card" aria-label="Organizers">
+          <h2>Organizers</h2>
+          <p class="muted">The Second Evaluation on LLM-Generated Text Detection（第二届大语言模型生成文本检测评测）</p>
+          <p>
+            This shared task is jointly organized by the Natural Language Processing &amp; Portuguese-Chinese Machine Translation Laboratory
+            (NLP2CT) at the University of Macau, Central China Normal University, and Alibaba Cloud.
+          </p>
+          <ul class="org-list">
+            <li>
+              <strong>Junchao Wu</strong> | University of Macau
+              <span class="org-meta">（Contact）<a class="link" href="mailto:nlp2ct.junchao@gmail.com">nlp2ct.junchao@gmail.com</a></span>
+              <span class="org-meta">| <a class="link" href="https://junchaoiu.github.io/" target="_blank" rel="noreferrer">Homepage</a></span>
+            </li>
+            <li>
+              <strong>Derek Fai Wong</strong> | University of Macau
+              <span class="org-meta">| <a class="link" href="https://www.fst.um.edu.mo/personal/derek-wong/" target="_blank" rel="noreferrer">Homepage</a></span>
+            </li>
+            <li><strong>Runzhe Zhan</strong> | University of Macau</li>
+            <li><strong>Zeyu Wu</strong> | University of Macau</li>
+            <li><strong>Zhiwen Xie</strong> | University of Macau / Central China Normal University</li>
+            <li><strong>Yichao Du</strong> | Alibaba Cloud</li>
+            <li>
+              <strong>Longyue Wang</strong> | Alibaba Cloud
+              <span class="org-meta">| <a class="link" href="https://www.longyuewang.com/" target="_blank" rel="noreferrer">Homepage</a></span>
+            </li>
+          </ul>
+
+          <div class="org-logos">
+            <div class="org-logo-item">
+              <img src="img/nlp2ct_logo.png" alt="NLP2CT Laboratory">
+            </div>
+            <div class="org-logo-item">
+              <img src="img/um_logo.png" alt="University of Macau">
+            </div>
+            <div class="org-logo-item">
+              <img src="img/ccnu_logo.png" alt="Central China Normal University">
+            </div>
+            <div class="org-logo-item">
+              <img src="img/aliyun_logo.png" alt="Alibaba Cloud">
+            </div>
+          </div>
+        </section>
+
+        <div class="footer">Copyright &copy; 2026 NLP2CT Lab. All Rights Reserved.</div>
+      </div>
+
+      <!-- Chinese -->
+      <div id="content-zh" class="content">
+        <section class="hero" aria-label="ShareTask Hero">
+          <div class="brand">NLPCC 2026 共享任务: 第二届大语言模型生成文本检测评测</div>
+
+          <div class="hero-meta" aria-label="会议时间地点与报名">
+            <div class="hero-location">Macau, China</div>
+            <div class="hero-dates">November 3-5, 2026</div>
+            <a
+              class="cta-btn"
+              href="https://alidocs.dingtalk.com/notable/share/form/v018K4nyeZ1wGK0YnLb_dv19yqvsgs3oebp3pcjys_bUfwzOn"
+              target="_blank"
+              rel="noreferrer"
+            >
+              报名
+            </a>
+            <p class="register-text">
+              报名请填写共享任务报名表：
+              <a class="link" href="https://alidocs.dingtalk.com/notable/share/form/v018K4nyeZ1wGK0YnLb_dv19yqvsgs3oebp3pcjys_bUfwzOn" target="_blank" rel="noreferrer">
+                https://alidocs.dingtalk.com/notable/share/form/v018K4nyeZ1wGK0YnLb_dv19yqvsgs3oebp3pcjys_bUfwzOn
+              </a>
+              如有任何疑问，欢迎随时联系：
+              <a class="link" href="mailto:nlp2ct.junchao@gmail.com">nlp2ct.junchao@gmail.com</a>
+            </p>
+          </div>
+        </section>
+
+        <section class="section card" aria-label="简介">
+          <h2>简介</h2>
+          <p>
+            大型语言模型（LLM）的快速发展带来了虚假信息生成、有害内容传播、滥用误用等一系列严峻挑战。在此背景下，高效区分 LLM 生成文本与人类原创文本，已成为自然语言处理领域亟待解决的重要课题。当前，LLM 生成文本检测技术已取得显著进展，然而相关研究多集中于英文场景，面向中文的系统性研究与技术探索仍较为匮乏。本共享任务旨在弥补这一研究缺口，构建性能更强的中文 LLM 生成文本检测模型，推动该领域在中文语境下的研究与应用落地。继第一届 LLM 生成文本检测共享任务（NLPCC2025，新疆）成功举办，2026 第二届 LLM 生成文本检测共享任务在首届基础上实现重要升级：任务形式从二分类扩展为三分类，即在区分人类原创（Human-Written）与 LLM 原生生成（LLM-Generated）文本的基础上，新增对 LLM 优化润色（LLM-Refined）文本的识别，更贴合大型语言模型的实际应用场景。参赛队伍需基于组委会提供的原始训练数据，设计并实现文本检测算法，实现对不同来源文本的精准判别，并接受压力测试。
+          </p>
+        </section>
+
+        <section class="section card" aria-label="初步日程">
+          <h2>初步日程 (Tentative Schedule)</h2>
+          <table class="schedule-table">
+            <tr><td>2026年3月20日</td><td>共享任务发布及参赛征集</td></tr>
+            <tr><td>2026年3月20日</td><td>报名开始</td></tr>
+            <tr><td>2026年4月15日</td><td>发布详细的任务指南和训练数据</td></tr>
+            <tr><td>2026年5月25日</td><td>报名截止</td></tr>
+            <tr><td>2026年6月11日</td><td>测试数据发布</td></tr>
+            <tr><td>2026年6月20日</td><td>参赛队伍提交评测结果截止</td></tr>
+            <tr><td>2026年6月30日</td><td>公布评测结果，征集系统报告和会议论文</td></tr>
+          </table>
+        </section>
+
+        <section class="section card" aria-label="组织者">
+          <h2>组织者</h2>
+          <p class="muted">第二届大语言模型生成文本检测评测（The Second Evaluation on LLM-Generated Text Detection）</p>
+          <p>
+            本共享任务由澳门大学自然语言处理与葡汉机器翻译实验室（NLP2CT）、华中师范大学以及阿里云联合主办。
+          </p>
+          <ul class="org-list">
+            <li>
+              <strong>吴俊潮</strong> | 澳门大学
+              <span class="org-meta">（联系人）<a class="link" href="mailto:nlp2ct.junchao@gmail.com">nlp2ct.junchao@gmail.com</a></span>
+              <span class="org-meta">| <a class="link" href="https://junchaoiu.github.io/" target="_blank" rel="noreferrer">个人主页</a></span>
+            </li>
+            <li>
+              <strong>黄辉</strong> | 澳门大学
+              <span class="org-meta">| <a class="link" href="https://www.fst.um.edu.mo/personal/derek-wong/" target="_blank" rel="noreferrer">个人主页</a></span>
+            </li>
+            <li><strong>詹润哲</strong> | 澳门大学</li>
+            <li><strong>吴泽宇</strong> | 澳门大学</li>
+            <li><strong>谢志文</strong> | 澳门大学 / 华中师范大学</li>
+            <li><strong>杜逸超</strong> | 阿里云</li>
+            <li>
+              <strong>王龙跃</strong> | 阿里云
+              <span class="org-meta">| <a class="link" href="https://www.longyuewang.com/" target="_blank" rel="noreferrer">个人主页</a></span>
+            </li>
+          </ul>
+
+          <div class="org-logos">
+            <div class="org-logo-item">
+              <img src="img/nlp2ct_logo.png" alt="NLP2CT 实验室">
+            </div>
+            <div class="org-logo-item">
+              <img src="img/um_logo.png" alt="澳门大学">
+            </div>
+            <div class="org-logo-item">
+              <img src="img/ccnu_logo.png" alt="华中师范大学">
+            </div>
+            <div class="org-logo-item">
+              <img src="img/aliyun_logo.png" alt="阿里云">
+            </div>
+          </div>
+        </section>
+
+        <div class="footer">版权所有 &copy; 2026 NLP2CT 实验室。保留所有权利。</div>
       </div>
     </main>
+
+    <script>
+      (function () {
+        const en = document.getElementById("content-en");
+        const zh = document.getElementById("content-zh");
+        const btnEn = document.getElementById("btn-en");
+        const btnZh = document.getElementById("btn-zh");
+
+        function setLang(lang) {
+          const isEn = lang === "en";
+          en.classList.toggle("active", isEn);
+          zh.classList.toggle("active", !isEn);
+          btnEn.setAttribute("aria-pressed", String(isEn));
+          btnZh.setAttribute("aria-pressed", String(!isEn));
+          document.documentElement.lang = isEn ? "en" : "zh-CN";
+          try {
+            localStorage.setItem("lang", lang);
+          } catch (e) {
+            // Ignore if storage is not available.
+          }
+        }
+
+        // Default to English as requested.
+        let initial = "en";
+        try {
+          const saved = localStorage.getItem("lang");
+          if (saved === "en" || saved === "zh") initial = saved;
+        } catch (e) {}
+        setLang(initial);
+
+        btnEn.addEventListener("click", function () {
+          setLang("en");
+        });
+        btnZh.addEventListener("click", function () {
+          setLang("zh");
+        });
+      })();
+    </script>
   </body>
 </html>
 
