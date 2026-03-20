@@ -71,6 +71,69 @@
         width: auto;
         display: block;
       }
+      .nav-links {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        margin-left: 20px;
+        flex: 1;
+      }
+      .nav-dropdown {
+        position: relative;
+        display: inline-block;
+      }
+      .nav-dropbtn {
+        background: transparent;
+        color: #fff;
+        border: none;
+        padding: 8px 12px;
+        font-size: 14px;
+        font-weight: 600;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        gap: 4px;
+        opacity: 0.85;
+        transition: opacity 0.2s;
+      }
+      .nav-dropbtn:hover {
+        opacity: 1;
+      }
+      .nav-dropbtn::after {
+        content: "";
+        width: 0;
+        height: 0;
+        border-left: 4px solid transparent;
+        border-right: 4px solid transparent;
+        border-top: 4px solid #fff;
+        margin-top: 2px;
+      }
+      .dropdown-content {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background-color: #fff;
+        min-width: 160px;
+        box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+        border-radius: 8px;
+        overflow: hidden;
+        z-index: 1001;
+      }
+      .dropdown-content a {
+        color: #333;
+        padding: 10px 16px;
+        text-decoration: none;
+        display: block;
+        font-size: 13px;
+        transition: background 0.2s;
+      }
+      .dropdown-content a:hover {
+        background-color: #f1f5f9;
+      }
+      .nav-dropdown:hover .dropdown-content {
+        display: block;
+      }
       .logo-dot {
         width: 12px;
         height: 12px;
@@ -317,6 +380,9 @@
         .topbar-inner {
           padding: 10px 14px;
         }
+        .nav-links {
+          display: none; /* 移动端暂时隐藏下拉菜单 */
+        }
         .page {
           padding: 18px 14px 50px;
         }
@@ -342,6 +408,14 @@
           <img class="topbar-logo" src="img/logo.svg" alt="NLPCC 2026 logo" loading="eager" />
           <span>NLPCC 2026</span>
         </a>
+        <div class="nav-links">
+          <div class="nav-dropdown">
+            <button class="nav-dropbtn">Past Tasks</button>
+            <div class="dropdown-content">
+              <a href="https://github.com/NLP2CT/NLPCC-2025-Task1" target="_blank" rel="noreferrer">NLPCC 2025 Task 1</a>
+            </div>
+          </div>
+        </div>
         <div class="langbar" aria-label="Language switch">
           <button id="btn-en" class="langbtn" type="button" aria-pressed="true">English</button>
           <button id="btn-zh" class="langbtn" type="button" aria-pressed="false">中文</button>
@@ -563,6 +637,7 @@
         const zh = document.getElementById("content-zh");
         const btnEn = document.getElementById("btn-en");
         const btnZh = document.getElementById("btn-zh");
+        const pastTasksBtn = document.querySelector(".nav-dropbtn");
 
         function setLang(lang) {
           const isEn = lang === "en";
@@ -571,6 +646,12 @@
           btnEn.setAttribute("aria-pressed", String(isEn));
           btnZh.setAttribute("aria-pressed", String(!isEn));
           document.documentElement.lang = isEn ? "en" : "zh-CN";
+          
+          // Update past tasks button text
+          if (pastTasksBtn) {
+            pastTasksBtn.textContent = isEn ? "Past Tasks" : "往届任务";
+          }
+
           try {
             localStorage.setItem("lang", lang);
           } catch (e) {
