@@ -1,4 +1,4 @@
-# NLPCC 2026 Share Task: The Second Evaluation on LLM-Generated Text Detection
+# NLPCC 2026 Share Task 6: The Second Shared Task on LLM-Generated Text Detection
 
 [中文版本 (Chinese Version)](README_zh.md)
 
