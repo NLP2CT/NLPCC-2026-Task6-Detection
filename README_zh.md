@@ -1,4 +1,4 @@
-# NLPCC 2026 共享任务: 第二届大语言模型生成文本检测评测
+# NLPCC 2026 共享任务6: 第二届大语言模型生成文本检测评测
 
 [English Version](README.md)
 
