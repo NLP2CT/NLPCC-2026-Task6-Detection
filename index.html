@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>NLPCC 2026 - Share Task 官网</title>
+    <title>NLPCC 2026 - Share Task 6 官网</title>
     <style>
       :root {
         --primary: #0b5fff;
@@ -406,7 +406,7 @@
       <div class="topbar-inner">
         <a class="brand-link" href="#" aria-label="NLPCC 2026">
           <img class="topbar-logo" src="img/logo.svg" alt="NLPCC 2026 logo" loading="eager" />
-          <span>NLPCC 2026</span>
+          <span>NLPCC 2026 Task 6</span>
         </a>
         <div class="nav-links">
           <div class="nav-dropdown">
@@ -428,7 +428,7 @@
       <!-- English (default) -->
       <div id="content-en" class="content active">
         <section class="hero" aria-label="ShareTask Hero">
-          <div class="brand">NLPCC 2026 Share Task: The Second Evaluation on LLM-Generated Text Detection</div>
+          <div class="brand">NLPCC 2026 Share Task 6: The Second Evaluation on LLM-Generated Text Detection</div>
 
           <div class="hero-meta" aria-label="Conference schedule and registration">
             <div class="hero-location">Macau, China</div>
@@ -454,6 +454,14 @@
           </div>
         </section>
 
+        <section class="section card" aria-label="Latest News">
+          <h2>Latest News</h2>
+          <ul class="org-list">
+            <li>[ 2025.04.15 ] 💡 We have released the detailed task guidelines and training data ~</li>
+            <li>[ 2025.03.20 ] 🔥 Registration for NLPCC-2026 Task 6 is now open. Welcome to join us!</li>
+          </ul>
+        </section>
+
         <section class="section card" aria-label="Introduction">
           <h2>Introduction</h2>
           <p>
@@ -473,6 +481,25 @@
             Participating teams are required to design and implement text detection algorithms based on the training data provided to
             achieve accurate classification and will undergo rigorous stress testing.
           </p>
+        </section>
+
+        <section class="section card" aria-label="Dataset">
+          <h2>Dataset</h2>
+          <p>
+            The training set for this task is primarily sampled and adapted from the CUDRT (TIST 2026) open dataset (Chinese subset: continuation based on the first 25% of tokens). The test set will be released in the later stages of the competition for teams to verify the effectiveness of their methods and evaluate final performance. The evaluation dataset is extended and constructed based on the DetectRL benchmark (NeurIPS 2024) framework, containing multiple generation models and domain data to ensure the authenticity and challenge of the evaluation scenarios.
+          </p>
+          <h3>Training Set</h3>
+          <p>
+            Contains data from 4 types of LLMs and 2 domains. Specifically, data sources include news and academic writing, and generation models include GPT-4, Qwen, ChatGLM, and Baichuan. The training set contains a total of 20,370 pairs of samples. Each pair contains four fields: "ID", "HWT", "LGT", and "HLT". "ID" identifies the sample number, while "HWT", "LGT", and "HLT" represent "Human-written text", "LLM-generated text", and "LLM-refined text" respectively.
+          </p>
+          <h3>Data Download</h3>
+          <p>
+            The training data can be found at the following links:
+          </p>
+          <ul class="org-list">
+            <li>Google Drive: <a class="link" href="https://drive.google.com/drive/folders/1R5KiW7uwQ002dOE2expEYQLbzQ_gMr8j?usp=sharing" target="_blank" rel="noreferrer">Download Link</a></li>
+            <li>Github: <a class="link" href="https://github.com/NLP2CT/NLPCC-2026-Task6-Detection/tree/main/data" target="_blank" rel="noreferrer">Data Folder</a></li>
+          </ul>
         </section>
 
         <section class="section card" aria-label="Tentative Schedule">
@@ -533,13 +560,49 @@
           </div>
         </section>
 
+        <section class="section card" aria-label="FAQ">
+          <h2>FAQ</h2>
+          <p><strong>Q: Where can I register for this shared task? Can team registration be updated?</strong></p>
+          <p>A: Fill out the following <a class="link" href="https://alidocs.dingtalk.com/notable/share/form/v018K4nyeZ1wGK0YnLb_dv19yqvsgs3oebp3pcjys_bUfwzOn" target="_blank" rel="noreferrer">link</a> to register. Before the registration deadline, you can fill out this link repeatedly to update team registration information.</p>
+        </section>
+
+        <section class="section card" aria-label="References">
+          <h2>References</h2>
+          <p>If your research uses relevant datasets, or if this task is helpful to you, please consider citing the following literature:</p>
+          <pre><code>@article{wu2024detectrl,
+  title={Detectrl: Benchmarking llm-generated text detection in real-world scenarios},
+  author={Wu, Junchao and Zhan, Runzhe and Wong, Derek F and Yang, Shu and Yang, Xinyi and Yuan, Yulin and Chao, Lidia S},
+  journal={Advances in Neural Information Processing Systems},
+  volume={37},
+  pages={100369--100401},
+  year={2024}
+}</code></pre>
+          <pre><code>@inproceedings{wu2025overview,
+  title={Overview of the NLPCC 2025 Shared Task 1: LLM-Generated Text Detection},
+  author={Wu, Junchao and Zhan, Runzhe and Wang, Qianli and Yuan, Yulin and Chao, Lidia S and Wong, Derek F},
+  booktitle={CCF International Conference on Natural Language Processing and Chinese Computing},
+  pages={263--274},
+  year={2025},
+  organization={Springer}
+}</code></pre>
+          <pre><code>@article{tao2026toward,
+  title={Toward Reliable Detection of LLM-Generated Texts: A Comprehensive Evaluation Framework with CUDRT},
+  author={Tao, Zhen and Chen, Yanfang and Xi, Dinghao and Li, Zhiyu and Xu, Wei},
+  journal={ACM Transactions on Intelligent Systems and Technology},
+  volume={17},
+  number={2},
+  pages={1--35},
+  year={2026}
+}</code></pre>
+        </section>
+
         <div class="footer">Copyright &copy; 2026 NLP2CT Lab. All Rights Reserved.</div>
       </div>
 
       <!-- Chinese -->
       <div id="content-zh" class="content">
         <section class="hero" aria-label="ShareTask Hero">
-          <div class="brand">NLPCC 2026 共享任务: 第二届大语言模型生成文本检测评测</div>
+          <div class="brand">NLPCC 2026 共享任务6: 第二届大语言模型生成文本检测评测</div>
 
           <div class="hero-meta" aria-label="会议时间地点与报名">
             <div class="hero-location">Macau, China</div>
@@ -563,11 +626,38 @@
           </div>
         </section>
 
+        <section class="section card" aria-label="最新消息">
+          <h2>最新消息</h2>
+          <ul class="org-list">
+            <li>[ 2025.04.15 ] 💡 我们已经发布了具体的任务指引和训练数据 ~</li>
+            <li>[ 2025.03.20 ] 🔥 NLPCC-2026 Task 6 任务的注册已经开放，欢迎报名！</li>
+          </ul>
+        </section>
+
         <section class="section card" aria-label="简介">
           <h2>简介</h2>
           <p>
             大型语言模型（LLM）的快速发展带来了虚假信息生成、有害内容传播、滥用误用等一系列严峻挑战。在此背景下，高效区分 LLM 生成文本与人类原创文本，已成为自然语言处理领域亟待解决的重要课题。当前，LLM 生成文本检测技术已取得显著进展，然而相关研究多集中于英文场景，面向中文的系统性研究与技术探索仍较为匮乏。本共享任务旨在弥补这一研究缺口，构建性能更强的中文 LLM 生成文本检测模型，推动该领域在中文语境下的研究与应用落地。继第一届 LLM 生成文本检测共享任务（NLPCC2025，新疆）成功举办，2026 第二届 LLM 生成文本检测共享任务在首届基础上实现重要升级：任务形式从二分类扩展为三分类，即在区分人类原创（Human-Written）与 LLM 原生生成（LLM-Generated）文本的基础上，新增对 LLM 优化润色（LLM-Refined）文本的识别，更贴合大型语言模型的实际应用场景。参赛队伍需基于组委会提供的原始训练数据，设计并实现文本检测算法，实现对不同来源文本的精准判别，并接受压力测试。
           </p>
+        </section>
+
+        <section class="section card" aria-label="数据集">
+          <h2>数据集</h2>
+          <p>
+            本次任务的训练集主要采样和改编自 CUDRT（TIST 2026）公开数据集（中文子集：基于前25%token续写））；测试集将在赛事后期陆续发布，供参赛队伍验证方法有效性并评估最终性能。评测数据集在 DetectRL 基准（NeurIPS 2024）框架基础上扩展构建，包含多种生成模型和领域数据，以保证评测场景的真实性与挑战性。
+          </p>
+          <h3>训练集</h3>
+          <p>
+            包含来自4种大语言模型和2个领域的数据。具体来说，数据来源包括新闻和学术写作，生成模型包括 GPT-4、Qwen、ChatGLM 和 Baichuan。训练集总共包含 20,370 对样本。每对样本包含“ID”, “HWT”, “LGT”, “HLT” 四个字段，ID标识每条样本编号，“HWT”, “LGT”, 和“HLT” 分别代表“人类写作的样本”，“大模型生成的样本”，“大模型增强的样本”。
+          </p>
+          <h3>数据下载</h3>
+          <p>
+            训练数据可以在以下链接中找到：
+          </p>
+          <ul class="org-list">
+            <li>Google Drive: <a class="link" href="https://drive.google.com/drive/folders/1R5KiW7uwQ002dOE2expEYQLbzQ_gMr8j?usp=sharing" target="_blank" rel="noreferrer">下载链接</a></li>
+            <li>Github: <a class="link" href="https://github.com/NLP2CT/NLPCC-2026-Task6-Detection/tree/main/data" target="_blank" rel="noreferrer">数据文件夹</a></li>
+          </ul>
         </section>
 
         <section class="section card" aria-label="初步日程">
@@ -625,6 +715,42 @@
               <img src="img/aliyun_logo.png" alt="阿里云">
             </a>
           </div>
+        </section>
+
+        <section class="section card" aria-label="常见问题">
+          <h2>常见问题 (FAQ)</h2>
+          <p><strong>问：我可以在哪里报名参加这个共享任务？团队报名信息可以更新吗？</strong></p>
+          <p>答：请填写以下<a class="link" href="https://alidocs.dingtalk.com/notable/share/form/v018K4nyeZ1wGK0YnLb_dv19yqvsgs3oebp3pcjys_bUfwzOn" target="_blank" rel="noreferrer">链接</a>进行报名。在报名截止日期之前，您可以重复填写此链接以更新团队报名信息。</p>
+        </section>
+
+        <section class="section card" aria-label="参考文献">
+          <h2>参考文献</h2>
+          <p>如果您的研究使用了相关数据集，或者本任务对您有所帮助，请考虑引用以下文献：</p>
+          <pre><code>@article{wu2024detectrl,
+  title={Detectrl: Benchmarking llm-generated text detection in real-world scenarios},
+  author={Wu, Junchao and Zhan, Runzhe and Wong, Derek F and Yang, Shu and Yang, Xinyi and Yuan, Yulin and Chao, Lidia S},
+  journal={Advances in Neural Information Processing Systems},
+  volume={37},
+  pages={100369--100401},
+  year={2024}
+}</code></pre>
+          <pre><code>@inproceedings{wu2025overview,
+  title={Overview of the NLPCC 2025 Shared Task 1: LLM-Generated Text Detection},
+  author={Wu, Junchao and Zhan, Runzhe and Wang, Qianli and Yuan, Yulin and Chao, Lidia S and Wong, Derek F},
+  booktitle={CCF International Conference on Natural Language Processing and Chinese Computing},
+  pages={263--274},
+  year={2025},
+  organization={Springer}
+}</code></pre>
+          <pre><code>@article{tao2026toward,
+  title={Toward Reliable Detection of LLM-Generated Texts: A Comprehensive Evaluation Framework with CUDRT},
+  author={Tao, Zhen and Chen, Yanfang and Xi, Dinghao Bureau, Li, Zhiyu and Xu, Wei},
+  journal={ACM Transactions on Intelligent Systems and Technology},
+  volume={17},
+  number={2},
+  pages={1--35},
+  year={2026}
+}</code></pre>
         </section>
 
         <div class="footer">版权所有 &copy; 2026 NLP2CT 实验室。保留所有权利。</div>
