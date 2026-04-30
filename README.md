@@ -137,6 +137,18 @@ A: Fill out the following link to register: https://alidocs.dingtalk.com/notable
 
 ---
 
+Q: Is there any restriction on the number of model parameters? If an ensemble approach is used, are there any constraints on the total number of parameters?
+
+A: NLPCC 2026 Share Task 6 places no restrictions on the number of parameters for a single model. Similarly, if an ensemble approach is adopted, there are no parameter constraints on the total number of parameters after ensemble.
+
+---
+
+Q: The training set is sourced from news and academic writing, using four generation models. Will the subsequent test data also consist of these two sources and these four models, or will it be expanded?
+
+A: As stated in the README under the Dataset section, the test set will be constructed using out-of-distribution data from another dataset (DetectRL benchmark, NeurIPS 2024). It will no longer be limited to the news and academic domains or the four generation models covered in the training set. The test data may introduce texts from unknown domains and unknown generation models, including different data generation schemes, to conduct multi-dimensional stress testing and comprehensively evaluate the detector's actual performance in real-world application scenarios.
+
+---
+
 **References**
 
 The following are references related to this shared task. If your research uses relevant datasets, or if this task is helpful to you, please consider citing the following literature:

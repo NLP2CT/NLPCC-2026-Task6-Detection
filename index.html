@@ -254,6 +254,36 @@
         border-radius: 8px;
         font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
       }
+      .ref-entry {
+        margin-bottom: 22px;
+      }
+      .ref-title {
+        font-weight: 700;
+        font-size: 16px;
+        margin-bottom: 6px;
+        line-height: 1.4;
+      }
+      .ref-meta {
+        color: var(--muted);
+        font-size: 14px;
+        margin-bottom: 10px;
+      }
+      pre.bibtex {
+        background: #0f172a;
+        color: #e2e8f0;
+        padding: 14px 16px;
+        border-radius: 10px;
+        overflow-x: auto;
+        font-size: 13px;
+        border-left: 4px solid var(--primary);
+        margin: 0;
+        line-height: 1.6;
+      }
+      pre.bibtex code {
+        background: transparent;
+        padding: 0;
+        color: inherit;
+      }
       .hero h1 {
         margin: 0 0 10px 0;
         font-size: 40px;
@@ -593,12 +623,19 @@
           <h2>FAQ</h2>
           <p><strong>Q: Where can I register for this shared task? Can team registration be updated?</strong></p>
           <p>A: Fill out the following <a class="link" href="https://alidocs.dingtalk.com/notable/share/form/v018K4nyeZ1wGK0YnLb_dv19yqvsgs3oebp3pcjys_bUfwzOn" target="_blank" rel="noreferrer">link</a> to register. Before the registration deadline, you can fill out this link repeatedly to update team registration information.</p>
+          <p><strong>Q: Is there any restriction on the number of model parameters? If an ensemble approach is used, are there any constraints on the total number of parameters?</strong></p>
+          <p>A: NLPCC 2026 Share Task 6 places no restrictions on the number of parameters for a single model. Similarly, if an ensemble approach is adopted, there are no parameter constraints on the total number of parameters after ensemble.</p>
+          <p><strong>Q: The training set is sourced from news and academic writing, using four generation models. Will the subsequent test data also consist of these two sources and these four models, or will it be expanded?</strong></p>
+          <p>A: As stated in the README under the Dataset section, the test set will be constructed using out-of-distribution data from another dataset (DetectRL benchmark, NeurIPS 2024). It will no longer be limited to the news and academic domains or the four generation models covered in the training set. The test data may introduce texts from unknown domains and unknown generation models, including different data generation schemes, to conduct multi-dimensional stress testing and comprehensively evaluate the detector's actual performance in real-world application scenarios.</p>
         </section>
 
         <section class="section card" aria-label="References">
           <h2>References</h2>
           <p>If your research uses relevant datasets, or if this task is helpful to you, please consider citing the following literature:</p>
-          <pre><code>@article{wu2024detectrl,
+          <div class="ref-entry">
+            <div class="ref-title">DetectRL: Benchmarking LLM-Generated Text Detection in Real-World Scenarios</div>
+            <div class="ref-meta">Wu, Junchao; Zhan, Runzhe; Wong, Derek F; Yang, Shu; Yang, Xinyi; Yuan, Yulin; Chao, Lidia S · <em>Advances in Neural Information Processing Systems</em> · 2024 · pp. 100369–100401</div>
+            <pre class="bibtex"><code>@article{wu2024detectrl,
   title={Detectrl: Benchmarking llm-generated text detection in real-world scenarios},
   author={Wu, Junchao and Zhan, Runzhe and Wong, Derek F and Yang, Shu and Yang, Xinyi and Yuan, Yulin and Chao, Lidia S},
   journal={Advances in Neural Information Processing Systems},
@@ -606,7 +643,11 @@
   pages={100369--100401},
   year={2024}
 }</code></pre>
-          <pre><code>@inproceedings{wu2025overview,
+          </div>
+          <div class="ref-entry">
+            <div class="ref-title">Overview of the NLPCC 2025 Shared Task 1: LLM-Generated Text Detection</div>
+            <div class="ref-meta">Wu, Junchao; Zhan, Runzhe; Wang, Qianli; Yuan, Yulin; Chao, Lidia S; Wong, Derek F · <em>CCF International Conference on Natural Language Processing and Chinese Computing</em> · 2025 · pp. 263–274</div>
+            <pre class="bibtex"><code>@inproceedings{wu2025overview,
   title={Overview of the NLPCC 2025 Shared Task 1: LLM-Generated Text Detection},
   author={Wu, Junchao and Zhan, Runzhe and Wang, Qianli and Yuan, Yulin and Chao, Lidia S and Wong, Derek F},
   booktitle={CCF International Conference on Natural Language Processing and Chinese Computing},
@@ -614,7 +655,11 @@
   year={2025},
   organization={Springer}
 }</code></pre>
-          <pre><code>@article{tao2026toward,
+          </div>
+          <div class="ref-entry">
+            <div class="ref-title">Toward Reliable Detection of LLM-Generated Texts: A Comprehensive Evaluation Framework with CUDRT</div>
+            <div class="ref-meta">Tao, Zhen; Chen, Yanfang; Xi, Dinghao; Li, Zhiyu; Xu, Wei · <em>ACM Transactions on Intelligent Systems and Technology</em> · 2026 · Vol. 17, No. 2 · pp. 1–35</div>
+            <pre class="bibtex"><code>@article{tao2026toward,
   title={Toward Reliable Detection of LLM-Generated Texts: A Comprehensive Evaluation Framework with CUDRT},
   author={Tao, Zhen and Chen, Yanfang and Xi, Dinghao and Li, Zhiyu and Xu, Wei},
   journal={ACM Transactions on Intelligent Systems and Technology},
@@ -623,6 +668,7 @@
   pages={1--35},
   year={2026}
 }</code></pre>
+          </div>
         </section>
 
         <div class="footer">Copyright &copy; 2026 NLP2CT Lab. All Rights Reserved.</div>
@@ -779,12 +825,19 @@
           <h2>常见问题 (FAQ)</h2>
           <p><strong>问：我可以在哪里报名参加这个共享任务？团队报名信息可以更新吗？</strong></p>
           <p>答：请填写以下<a class="link" href="https://alidocs.dingtalk.com/notable/share/form/v018K4nyeZ1wGK0YnLb_dv19yqvsgs3oebp3pcjys_bUfwzOn" target="_blank" rel="noreferrer">链接</a>进行报名。在报名截止日期之前，您可以重复填写此链接以更新团队报名信息。</p>
+          <p><strong>问：本次任务对模型参数量有没有限制？如果进行模型集成，对总参数量有没有要求？</strong></p>
+          <p>答：本次 NLPCC 2026 Share Task 6 任务对单模型参数量没有任何限制，同时若采用模型集成方案，对集成后的总参数量也无相关参数约束。</p>
+          <p><strong>问：训练集的数据来源是新闻和学术写作，所用为四种生成模型。后续测试数据中也是这两种来源和这四种模型吗，还是会扩充？</strong></p>
+          <p>答：正如 README 中【数据集】部分所述，测试集将采用另一个数据集的分布外数据（DetectRL 基准，NeurIPS 2024）扩展构建，不再局限于训练集所涵盖的新闻、学术领域以及四类生成模型。测试数据将可能引入未知领域文本与未知生成模型，包括不同的数据生成方案，进行多维度压力测试，从而全面客观地综合评估检测器在真实应用场景下的实际性能表现。</p>
         </section>
 
         <section class="section card" aria-label="参考文献">
           <h2>参考文献</h2>
           <p>如果您的研究使用了相关数据集，或者本任务对您有所帮助，请考虑引用以下文献：</p>
-          <pre><code>@article{wu2024detectrl,
+          <div class="ref-entry">
+            <div class="ref-title">DetectRL: Benchmarking LLM-Generated Text Detection in Real-World Scenarios</div>
+            <div class="ref-meta">Wu, Junchao; Zhan, Runzhe; Wong, Derek F; Yang, Shu; Yang, Xinyi; Yuan, Yulin; Chao, Lidia S · <em>Advances in Neural Information Processing Systems</em> · 2024 · pp. 100369–100401</div>
+            <pre class="bibtex"><code>@article{wu2024detectrl,
   title={Detectrl: Benchmarking llm-generated text detection in real-world scenarios},
   author={Wu, Junchao and Zhan, Runzhe and Wong, Derek F and Yang, Shu and Yang, Xinyi and Yuan, Yulin and Chao, Lidia S},
   journal={Advances in Neural Information Processing Systems},
@@ -792,7 +845,11 @@
   pages={100369--100401},
   year={2024}
 }</code></pre>
-          <pre><code>@inproceedings{wu2025overview,
+          </div>
+          <div class="ref-entry">
+            <div class="ref-title">Overview of the NLPCC 2025 Shared Task 1: LLM-Generated Text Detection</div>
+            <div class="ref-meta">Wu, Junchao; Zhan, Runzhe; Wang, Qianli; Yuan, Yulin; Chao, Lidia S; Wong, Derek F · <em>CCF International Conference on Natural Language Processing and Chinese Computing</em> · 2025 · pp. 263–274</div>
+            <pre class="bibtex"><code>@inproceedings{wu2025overview,
   title={Overview of the NLPCC 2025 Shared Task 1: LLM-Generated Text Detection},
   author={Wu, Junchao and Zhan, Runzhe and Wang, Qianli and Yuan, Yulin and Chao, Lidia S and Wong, Derek F},
   booktitle={CCF International Conference on Natural Language Processing and Chinese Computing},
@@ -800,7 +857,11 @@
   year={2025},
   organization={Springer}
 }</code></pre>
-          <pre><code>@article{tao2026toward,
+          </div>
+          <div class="ref-entry">
+            <div class="ref-title">Toward Reliable Detection of LLM-Generated Texts: A Comprehensive Evaluation Framework with CUDRT</div>
+            <div class="ref-meta">Tao, Zhen; Chen, Yanfang; Xi, Dinghao; Li, Zhiyu; Xu, Wei · <em>ACM Transactions on Intelligent Systems and Technology</em> · 2026 · Vol. 17, No. 2 · pp. 1–35</div>
+            <pre class="bibtex"><code>@article{tao2026toward,
   title={Toward Reliable Detection of LLM-Generated Texts: A Comprehensive Evaluation Framework with CUDRT},
   author={Tao, Zhen and Chen, Yanfang and Xi, Dinghao and Li, Zhiyu and Xu, Wei},
   journal={ACM Transactions on Intelligent Systems and Technology},
@@ -809,6 +870,7 @@
   pages={1--35},
   year={2026}
 }</code></pre>
+          </div>
         </section>
 
         <div class="footer">版权所有 &copy; 2026 NLP2CT 实验室。保留所有权利。</div>
