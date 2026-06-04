@@ -19,6 +19,7 @@ Following the success of the 1st Shared Task on LLM-Generated Text Detection (NL
 
 ## Latest News
 
+- [ 2025.06.05 ] 🚀 Phase 1 (open evaluation) is now open! The test data and Codabench evaluation platform are available.
 - [ 2025.05.08 ] 🔄 We have updated the dataset to unify the label "MGT" to "LGT" to match the documentation. No other changes were made. The original MGT in the training set is equivalent to LGT (label=2). We apologize for any inconvenience and confusion caused.
 - [ 2025.04.15 ] 💡 We have released the detailed task guidelines and training data ~
 - [ 2025.03.20 ] 🔥 Registration for NLPCC-2026 Task 6 is now open. Welcome to join us!
@@ -60,7 +61,7 @@ Data is stored in JSON object format.
 
 ```json
 {
-  "ID": test sample ID,
+  "id": test sample ID,
   "text": "HWT, LGT, or HLT",
   "label": "label (HWT: 0, LGT: 1, HLT: 2)",
 }
@@ -74,13 +75,13 @@ The official evaluation metric for this task is the macro-averaged F1-Score.
 
 ## Submission and Evaluation
 
-The submission platform for this evaluation task (tentatively Alibaba Cloud Tianchi) will be launched one week before the release of the test data for Phase 1 evaluation (open evaluation, leaderboard verification); and subsequently Phase 2 evaluation (closed evaluation, final ranking). Specific details of the test result text are as follows:
+The submission platform for this evaluation task is [Codabench](https://www.codabench.org/competitions/16946). The platform is now open for Phase 1 evaluation (open evaluation, leaderboard verification); and subsequently Phase 2 evaluation (closed evaluation, final ranking) will be available. Specific details of the test result text are as follows:
 
 1. Test Result File
 - Your test result file must be a JSON file containing all samples.
-- Please ensure that the text and ID fields remain unchanged.
+- Please ensure that the text and id fields remain unchanged.
 - Each sample in the JSON file should contain the following fields:
-    - "ID": Unique identifier of the sample
+    - "id": Unique identifier of the sample
     - "text": Text content of the sample
     - "label": Classification result according to the following rules:
         - Human-written text: label is 0
