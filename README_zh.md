@@ -19,7 +19,7 @@
 
 ## 最新消息
 
-- [ 2025.06.05 ] 🚀 第一阶段（开放评测）现已开启！测试数据和 Codabench 评测平台已开放。
+- [ 2025.06.05 ] 🚀 第一阶段（开放评测）现已开启！[测试数据](https://github.com/NLP2CT/NLPCC-2026-Task6-Detection/blob/main/data/testp1.json)和 [Codabench 评测平台](https://www.codabench.org/competitions/16946)已开放。
 - [ 2025.05.08 ] 🔄 我们更新了数据集，将数据内的 MGT 统一修正为 LGT，以和文档对应。其他没有任何改变，原来训练集中的 MGT 即是 LGT（标签为 2）。带来不便和困惑表示抱歉。
 - [ 2025.04.15 ] 💡 我们已经发布了具体的任务指引和训练数据 ~
 - [ 2025.03.20 ] 🔥 NLPCC-2026 Task 6 任务的注册已经开放，欢迎报名！
