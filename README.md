@@ -26,7 +26,7 @@ Following the success of the 1st Shared Task on LLM-Generated Text Detection (NL
 
 ## Dataset
 
-The training set for this task is primarily sampled and adapted from the CUDRT (TIST 2026) dataset (Chinese subset: Complete 25 ratio). The test set will be released in the later stages of the competition for teams to verify the effectiveness of their methods and evaluate final performance. The evaluation dataset is extended and constructed based on the DetectRL benchmark (NeurIPS 2024) framework, containing multiple generation models and domain data to ensure the authenticity and challenge of the evaluation scenarios.
+The training set for this task is primarily sampled and adapted from the CUDRT (TIST 2026) dataset (Chinese subset: Complete 25 ratio). The Phase 1 test set (open evaluation) is now available; the Phase 2 test set (closed evaluation) will be released in the later stages of the competition. The evaluation dataset is extended and constructed based on the DetectRL benchmark (NeurIPS 2024) framework, containing multiple generation models and domain data to ensure the authenticity and challenge of the evaluation scenarios.
 
 **Training Set**
 
@@ -37,6 +37,12 @@ Contains data from 4 types of LLMs and 2 domains. Specifically, data sources inc
 The training data can be found at the following Github folder link:
 
 - Github link: https://github.com/NLP2CT/NLPCC-2026-Task6-Detection/tree/main/data
+
+**Test Set (Phase 1)**
+
+The Phase 1 test data for open evaluation is now available:
+
+- Test data: https://github.com/NLP2CT/NLPCC-2026-Task6-Detection/blob/main/data/testp1.json
 
 **Data Restrictions**
 
