@@ -119,7 +119,8 @@ The submission platform for this evaluation task is [Codabench](https://www.coda
 | March 20, 2026 | Registration opens |
 | April 15, 2026 | Release of detailed task guidelines and training data |
 | May 25, 2026 | Registration deadline |
-| June 11, 2026 | Test data release |
+| June 5, 2026 | Phase 1 test data release (open evaluation) |
+| June 12, 2026 | Phase 2 test data release (closed evaluation) |
 | June 20, 2026 | Deadline for participants to submit results |
 | June 30, 2026 | Evaluation results released and call for system reports and conference papers |
 
