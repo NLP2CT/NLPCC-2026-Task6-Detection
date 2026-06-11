@@ -635,6 +635,12 @@
           <p>A: The pure English samples labeled as HLT and the ~2,000 samples ending with "123" (with preceding text identical to the human text) are both native noise from the CUDRT dataset; no additional cleaning was performed. Teams are expected to design their own data-cleaning strategies. Regarding the label inconsistency: in the current training set, MGT is equivalent to LGT (label=2). We will update the dataset in a subsequent release to uniformly correct MGT to LGT, along with an official correction notice.</p>
           <p><strong>Q: Can we use pseudo-labeling on the test set data (i.e., running the test data through our model to obtain pseudo-labels and using them as expanded training data)?</strong></p>
           <p>A: No, it is NOT allowed to use test set data for pseudo-labeling. You cannot add any test set samples with predicted pseudo-labels into your training data for model optimization. This practice is not applicable in real-world application scenarios, so we do not permit such operations in the competition. The official test set is strictly for final-submission evaluation only. Any form of using test set data for training, fine-tuning, pseudo-label construction, or data augmentation is considered a violation of the competition rules. You may only use the officially provided training set. Methods to expand the training set are limited to the announced legal data augmentation methods, and no new data sources may be explicitly introduced.</p>
+          <p><strong>Q: For prediction, can we input the entire dataset at once to output labels, or must we input single texts individually?</strong></p>
+          <p>A: Prediction must be performed by inputting single texts and outputting labels individually. This requirement ensures that the model is truly usable in real-world application scenarios.</p>
+          <p><strong>Q: Can we use uncleaned features (e.g., formatting artifacts) for rule-based classification?</strong></p>
+          <p>A: Rule-based classification using features extracted from the <strong>training set</strong> is allowed, but extracting features from the <strong>test set</strong> is prohibited. Teams that adopt such rule-based approaches must provide a statistical script to demonstrate that the features can be statistically observed in the training set. If the rules cannot be verified on the training set, the results will be disqualified — use this approach with caution.</p>
+          <p><strong>Q: Can we use built-in LLM APIs with internet-connected search (e.g., RAG) for classification?</strong></p>
+          <p>A: Using built-in LLM APIs for text classification is permitted. However, using RAG (Retrieval-Augmented Generation) or any form of internet-connected querying is prohibited, as it violates the rule against introducing external data sources.</p>
         </section>
 
         <section class="section card" aria-label="References">
@@ -845,6 +851,12 @@
           <p>答：训练集中出现的纯英文文本标签为 HLT 的样本，以及约 2000 条以 "123" 结尾、前文与人类文本重复的样本，均为 CUDRT 数据集原生噪声，我方未做额外清洗处理。数据清洗工作由各参赛队伍自行设计方案处理。关于标签不一致：训练集中的 MGT 即为 LGT（标签为 2），后续会更新数据集，将数据内的 MGT 统一修正为 LGT，并同步发布官方更正通知。</p>
           <p><strong>问：本次任务是否允许使用伪标签，即测试集的数据能否用我们的模型推理一遍，将预测结果作为伪标签加入训练集以扩充训练数据？</strong></p>
           <p>答：本次任务不允许使用测试集数据进行伪标签操作。任何形式的利用测试集样本及预测伪标签加入训练数据进行模型优化的行为均不被允许。因为在真实应用场景中，利用测试集数据进行伪标签的做法并不成立，所以在本次比赛中也不允许此类操作。官方测试集仅用于最终提交的评测。任何形式的利用测试集数据进行训练、微调、伪标签构建或数据增强的行为，将被视为违反比赛规则。参赛队伍仅可使用官方提供的训练集。训练集的扩展方式仅限于已公布的合法的数据增强方法，不可显式引入新的数据来源。</p>
+          <p><strong>问：预测时是可以通过整个数据集来输出标签，还是必须输入单个文本输出标签？</strong></p>
+          <p>答：预测环节必须输入单个文本输出标签，该要求旨在保证模型在实际应用场景中具备真实可用性。</p>
+          <p><strong>问：能否利用未清理干净的特征（如格式符号等）进行规则分类？</strong></p>
+          <p>答：允许基于<strong>训练集</strong>提取特征并开展规则分类，但禁止对<strong>测试集</strong>提取特征。采用此类规则方案的参赛队伍必须提供统计脚本，以证明该特征在训练集上可被统计性地观测到。若规则无法在训练集上验证，将取消成绩——请谨慎使用。</p>
+          <p><strong>问：能否通过内置大模型 API 进行联网搜索（如 RAG）判别文本？</strong></p>
+          <p>答：可以调用内置大模型 API 完成文本判别工作，但使用 RAG（检索增强生成）或任何形式的联网查询视为违规，该行为违反了禁止引入外部数据源的赛事规则。</p>
         </section>
 
         <section class="section card" aria-label="参考文献">

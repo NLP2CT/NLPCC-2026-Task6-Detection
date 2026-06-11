@@ -170,6 +170,24 @@ A: No, it is NOT allowed to use test set data for pseudo-labeling. You cannot ad
 
 ---
 
+Q: For prediction, can we input the entire dataset at once to output labels, or must we input single texts individually?
+
+A: Prediction must be performed by inputting single texts and outputting labels individually. This requirement ensures that the model is truly usable in real-world application scenarios.
+
+---
+
+Q: Can we use uncleaned features (e.g., formatting artifacts) for rule-based classification?
+
+A: Rule-based classification using features extracted from the **training set** is allowed, but extracting features from the **test set** is prohibited. Teams that adopt such rule-based approaches must provide a statistical script to demonstrate that the features can be statistically observed in the training set. If the rules cannot be verified on the training set, the results will be disqualified — use this approach with caution.
+
+---
+
+Q: Can we use built-in LLM APIs with internet-connected search (e.g., RAG) for classification?
+
+A: Using built-in LLM APIs for text classification is permitted. However, using RAG (Retrieval-Augmented Generation) or any form of internet-connected querying is prohibited, as it violates the rule against introducing external data sources.
+
+---
+
 **References**
 
 The following are references related to this shared task. If your research uses relevant datasets, or if this task is helpful to you, please consider citing the following literature:
