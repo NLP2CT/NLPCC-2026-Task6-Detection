@@ -19,7 +19,7 @@ Following the success of the 1st Shared Task on LLM-Generated Text Detection (NL
 
 ## Latest News
 
-- [ 2025.06.12 ] 🏆 Phase 2 (closed evaluation) will officially open on **June 16, 2026, 00:00 (GMT+8)**. The Phase 1 submission deadline has been extended to **June 15, 2026, 23:59 (GMT+8)**. Details below.
+- [ 2025.06.12 ] 🏆 Phase 2 (closed evaluation) will officially open on **June 16, 2026, 00:00 (GMT+8)**. The Phase 1 submission deadline has been extended to **June 15, 2026, 23:59 (GMT+8)**.
 - [ 2025.06.05 ] 🚀 Phase 1 (open evaluation) is now open! The [test data](https://github.com/NLP2CT/NLPCC-2026-Task6-Detection/blob/main/data/testp1.json) and [Codabench evaluation platform](https://www.codabench.org/competitions/16946) are available.
 - [ 2025.05.08 ] 🔄 We have updated the dataset to unify the label "MGT" to "LGT" to match the documentation. No other changes were made. The original MGT in the training set is equivalent to LGT (label=2). We apologize for any inconvenience and confusion caused.
 - [ 2025.04.15 ] 💡 We have released the detailed task guidelines and training data ~
