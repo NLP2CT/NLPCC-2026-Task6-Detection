@@ -88,7 +88,7 @@ The official evaluation metric for this task is the macro-averaged F1-Score.
 
 ## Submission and Evaluation
 
-The submission platform for this evaluation task is [Codabench](https://www.codabench.org/competitions/16946). Phase 2 (closed evaluation, final ranking) will open on **June 16, 2026, 00:00 (GMT+8)**. The submission deadline is **June 20, 2026, 23:59 (GMT+8)**. Each team may submit up to **100 times**. Scores will not be available during the submission period; the final leaderboard will be publicly released by **June 22, 2026**.
+The submission platform for this evaluation task is [Codabench](https://www.codabench.org/competitions/16946). Phase 2 (closed evaluation, final ranking) will open on **June 16, 2026, 00:00 (GMT+8)**. The submission deadline is **June 20, 2026, 23:59 (GMT+8)**. Each team may submit up to **100 times** (the final result will be based on the last submission). Scores will not be available during the submission period; the final leaderboard will be publicly released by **June 22, 2026**.
 
 Each team must submit the following three items packaged together. Submissions missing any component will be considered invalid. To facilitate automated compliance checks, the three items must be named exactly as follows:
 
