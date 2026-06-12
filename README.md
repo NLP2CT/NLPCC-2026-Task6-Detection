@@ -19,6 +19,8 @@ Following the success of the 1st Shared Task on LLM-Generated Text Detection (NL
 
 ## Latest News
 
+- [ 2025.06.12 ] 🏆 Phase 2 (closed evaluation) is now open! The [test data](https://github.com/NLP2CT/NLPCC-2026-Task6-Detection/tree/main/data/testp2.json) is available and the submission deadline is **June 20, 2026, 23:59 (GMT+8)**. Detailed guidelines have been sent via email.
+- [ 2025.06.10 ] ⏰ Phase 1 submission deadline has been extended to **June 15, 2026, 23:59 (GMT+8)**.
 - [ 2025.06.05 ] 🚀 Phase 1 (open evaluation) is now open! The [test data](https://github.com/NLP2CT/NLPCC-2026-Task6-Detection/blob/main/data/testp1.json) and [Codabench evaluation platform](https://www.codabench.org/competitions/16946) are available.
 - [ 2025.05.08 ] 🔄 We have updated the dataset to unify the label "MGT" to "LGT" to match the documentation. No other changes were made. The original MGT in the training set is equivalent to LGT (label=2). We apologize for any inconvenience and confusion caused.
 - [ 2025.04.15 ] 💡 We have released the detailed task guidelines and training data ~
@@ -43,6 +45,12 @@ The training data can be found at the following Github folder link:
 The Phase 1 test data for open evaluation is now available:
 
 - Test data: https://github.com/NLP2CT/NLPCC-2026-Task6-Detection/blob/main/data/testp1.json
+
+**Test Set (Phase 2)**
+
+The Phase 2 test data for closed evaluation is now available:
+
+- Test data: https://github.com/NLP2CT/NLPCC-2026-Task6-Detection/tree/main/data/testp2.json
 
 **Data Restrictions**
 
@@ -81,27 +89,20 @@ The official evaluation metric for this task is the macro-averaged F1-Score.
 
 ## Submission and Evaluation
 
-The submission platform for this evaluation task is [Codabench](https://www.codabench.org/competitions/16946). The platform is now open for Phase 1 evaluation (open evaluation, leaderboard verification); and subsequently Phase 2 evaluation (closed evaluation, final ranking) will be available. Specific details of the test result text are as follows:
+The submission platform for this evaluation task is [Codabench](https://www.codabench.org/competitions/16946). Phase 2 (closed evaluation, final ranking) is now open. The submission deadline is **June 20, 2026, 23:59 (GMT+8)**. Each team may submit up to **100 times**. Scores will not be available during the submission period; the final leaderboard will be publicly released by **June 22, 2026**.
 
-1. Test Result File
-- Your test result file must be a JSON file containing all samples.
-- Please ensure that the text and id fields remain unchanged.
-- Each sample in the JSON file should contain the following fields:
-    - "id": Unique identifier of the sample
-    - "text": Text content of the sample
-    - "label": Classification result according to the following rules:
-        - Human-written text: label is 0
-        - LLM-generated text: label is 1
-        - LLM-refined text: label is 2
+Each team must submit the following three items packaged together. Submissions missing any component will be considered invalid. To facilitate automated compliance checks, the three items must be named exactly as follows:
 
-2. Code and Data
+1. **Test results file** — must be named `prediction.json`. A JSON file covering all test samples, keeping `id` unchanged. Each sample must include `id` and `label` (HWT → 0, LGT → 1, HLT → 2).
 
-- The code folder should contain all the code required for data augmentation, data processing, model training, and model inference, as well as the complete dataset used to train the detector (i.e., containing augmented or processed samples).
-- Since the submitted code may be reviewed and reproduced, please include a simple README.md (or equivalent document) and an environment configuration file (e.g., requirements.txt, if applicable). In the document, briefly explain the reproduction process to ensure that your submitted results can be reproduced.
+2. **Code and data** — must be named `code_and_data.zip`. All source code for data augmentation, processing, model training, and inference, along with the complete training dataset (including augmented or processed samples). Include a `README.md` and an environment configuration file (e.g., `requirements.txt`).
 
-3. Technical Report
+3. **Technical report** — must be named `technical_report.pdf`. A detailed description of your methodology. All reports will be kept strictly confidential and deleted after NLPCC 2026 (not archived).
 
-- The technical report should describe in detail the methods used to solve the task, including data processing, data augmentation, and the specific methods/model architectures and parameters used. If necessary, you can add formulas and pseudo-code to help understanding. All solutions will be handled confidentially and deleted uniformly after the NLPCC 2026 conference (no archiving).
+**Account Policy**
+
+- Each team may use only **one account**, and the account name must match the **System Name (ID)** registered during sign-up — otherwise the submission will be invalid.
+- For packaging and format details, refer to the Submission guidelines under **Get Started** on Codabench.
 
 **Important Notes**
 
@@ -109,6 +110,22 @@ The submission platform for this evaluation task is [Codabench](https://www.coda
 - Submissions after the deadline will not be accepted.
 - The organizers reserve all rights, including but not limited to modifying the competition rules, data, etc., according to the actual situation during the competition. All modifications will be synchronized to all participating teams via email as soon as possible. Participating teams are also requested to stay tuned to our task official website [Latest News].
 - If you encounter any problems during the competition, please feel free to contact us via the following email: [nlp2ct.junchao@gmail.com](mailto:nlp2ct.junchao@gmail.com).
+
+---
+
+## Competition Rules
+
+The following rules are strictly enforced. Violations will result in disqualification.
+
+**No use of test set data for development** — Using Phase 1 or Phase 2 test set samples in any form to develop or optimize your detector is strictly prohibited. This includes, but is not limited to, pseudo-labeling and unsupervised methods applied to the test set. Only the officially provided training set may be used, extended exclusively through legitimate data augmentation methods based on the training set. Introducing new external data sources is not allowed.
+
+**Single-text prediction only** — Each prediction must take a single text as input and output its label. Batch inference across the entire dataset is not permitted; the approach must reflect real-world applicability.
+
+**No feature extraction on test set** — Rule-based methods may extract features from the training set only. Teams using such approaches must provide a statistical script demonstrating that the features are statistically observable in the training set. If rules cannot be verified on the training set, the submission will be disqualified.
+
+**No external data or web access** — Using retrieval-augmented generation (RAG), web search, or any form of external data source is prohibited. Calling built-in LLM APIs for text classification is permitted, provided no external information is introduced.
+
+**LLM API logging** — If your approach involves calling LLM APIs for detection, you must retain complete Q&A logs for potential audit.
 
 ---
 
@@ -120,9 +137,10 @@ The submission platform for this evaluation task is [Codabench](https://www.coda
 | April 15, 2026 | Release of detailed task guidelines and training data |
 | May 25, 2026 | Registration deadline |
 | June 5, 2026 | Phase 1 test data release (open evaluation) |
-| June 12, 2026 | Phase 2 test data release (closed evaluation) |
-| June 20, 2026 | Deadline for participants to submit results |
-| June 30, 2026 | Evaluation results released and call for system reports and conference papers |
+| June 15, 2026 | Phase 1 submission deadline (extended) |
+| June 16, 2026 | Phase 2 test data release (closed evaluation) |
+| June 20, 2026 | Phase 2 submission deadline |
+| June 22, 2026 | Final leaderboard released and call for system reports and conference papers |
 
 ---
 

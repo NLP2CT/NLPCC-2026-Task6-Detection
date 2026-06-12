@@ -487,6 +487,8 @@
         <section class="section card" aria-label="Latest News">
           <h2>Latest News</h2>
           <ul class="org-list">
+            <li>[ 2025.06.12 ] 🏆 Phase 2 (closed evaluation) is now open! The <a class="link" href="https://github.com/NLP2CT/NLPCC-2026-Task6-Detection/tree/main/data/testp2.json" target="_blank" rel="noreferrer">test data</a> is available and the submission deadline is <strong>June 20, 2026, 23:59 (GMT+8)</strong>. Detailed guidelines have been sent via email.</li>
+            <li>[ 2025.06.10 ] ⏰ Phase 1 submission deadline has been extended to <strong>June 15, 2026, 23:59 (GMT+8)</strong>.</li>
             <li>[ 2025.06.05 ] 🚀 Phase 1 (open evaluation) is now open! The <a class="link" href="https://github.com/NLP2CT/NLPCC-2026-Task6-Detection/blob/main/data/testp1.json" target="_blank" rel="noreferrer">test data</a> and <a class="link" href="https://www.codabench.org/competitions/16946" target="_blank" rel="noreferrer">Codabench evaluation platform</a> are available.</li>
             <li>[ 2025.05.08 ] 🔄 We have updated the dataset to unify the label "MGT" to "LGT" to match the documentation. No other changes were made. The original MGT in the training set is equivalent to LGT (label=2). We apologize for any inconvenience and confusion caused.</li>
             <li>[ 2025.04.15 ] 💡 We have released the detailed task guidelines and training data ~</li>
@@ -518,7 +520,7 @@
         <section class="section card" aria-label="Dataset">
           <h2>Dataset</h2>
           <p>
-            The training set for this task is primarily sampled and adapted from the CUDRT (TIST 2026) dataset (Chinese subset: Complete 25 ratio). The Phase 1 test set (open evaluation) is now available; the Phase 2 test set (closed evaluation) will be released in the later stages of the competition. The evaluation dataset is extended and constructed based on the DetectRL benchmark (NeurIPS 2024) framework, containing multiple generation models and domain data to ensure the authenticity and challenge of the evaluation scenarios.
+            The training set for this task is primarily sampled and adapted from the CUDRT (TIST 2026) dataset (Chinese subset: Complete 25 ratio). The Phase 1 test set (open evaluation) and Phase 2 test set (closed evaluation) are now available. The evaluation dataset is extended and constructed based on the DetectRL benchmark (NeurIPS 2024) framework, containing multiple generation models and domain data to ensure the authenticity and challenge of the evaluation scenarios.
           </p>
           <h3>Training Set</h3>
           <p>
@@ -531,6 +533,7 @@
           <ul class="org-list">
             <li>Github: <a class="link" href="https://github.com/NLP2CT/NLPCC-2026-Task6-Detection/tree/main/data" target="_blank" rel="noreferrer">Data Folder</a></li>
             <li>Phase 1 Test Data: <a class="link" href="https://github.com/NLP2CT/NLPCC-2026-Task6-Detection/blob/main/data/testp1.json" target="_blank" rel="noreferrer">testp1.json</a></li>
+            <li>Phase 2 Test Data: <a class="link" href="https://github.com/NLP2CT/NLPCC-2026-Task6-Detection/tree/main/data/testp2.json" target="_blank" rel="noreferrer">testp2.json</a></li>
           </ul>
           <h3>Data Restrictions</h3>
           <p>
@@ -545,23 +548,40 @@
         <section class="section card" aria-label="Submission and Evaluation">
           <h2>Submission and Evaluation</h2>
           <p>
-            The submission platform for this evaluation task is <a class="link" href="https://www.codabench.org/competitions/16946" target="_blank" rel="noreferrer">Codabench</a>. The platform is now open for Phase 1 evaluation (open evaluation, leaderboard verification); and subsequently Phase 2 evaluation (closed evaluation, final ranking) will be available. Specific details of the test result text are as follows:
+            The submission platform for this evaluation task is <a class="link" href="https://www.codabench.org/competitions/16946" target="_blank" rel="noreferrer">Codabench</a>. Phase 2 (closed evaluation, final ranking) is now open. The submission deadline is <strong>June 20, 2026, 23:59 (GMT+8)</strong>. Each team may submit up to <strong>100 times</strong>. Scores will not be available during the submission period; the final leaderboard will be publicly released by <strong>June 22, 2026</strong>.
           </p>
-          <h3>1. Test Result File</h3>
+          <p>
+            Each team must submit the following three items packaged together. Submissions missing any component will be considered invalid. To facilitate automated compliance checks, the three items must be named exactly as follows:
+          </p>
+          <h3>1. Test Results File</h3>
           <ul class="org-list">
-            <li>Your test result file must be a JSON file containing all samples.</li>
-            <li>Please ensure that the text and id fields remain unchanged.</li>
-            <li>Each sample in the JSON file should contain the following fields: "id", "text", and "label" (HWT: 0, LGT: 1, HLT: 2).</li>
+            <li>Must be named <strong>prediction.json</strong>. A JSON file covering all test samples, keeping <code>id</code> unchanged.</li>
+            <li>Each sample must include <code>id</code> and <code>label</code> (HWT → 0, LGT → 1, HLT → 2).</li>
           </ul>
           <h3>2. Code and Data</h3>
           <ul class="org-list">
-            <li>The code folder should contain all the code required for data augmentation, data processing, model training, and model inference, as well as the complete dataset used to train the detector.</li>
-            <li>Please include a simple README.md and an environment configuration file (e.g., requirements.txt).</li>
+            <li>Must be named <strong>code_and_data.zip</strong>. All source code for data augmentation, processing, model training, and inference, along with the complete training dataset.</li>
+            <li>Include a <code>README.md</code> and an environment configuration file (e.g., <code>requirements.txt</code>).</li>
           </ul>
           <h3>3. Technical Report</h3>
-          <p>
-            The technical report should describe in detail the methods used to solve the task. All solutions will be handled confidentially and deleted uniformly after the NLPCC 2026 conference.
-          </p>
+          <ul class="org-list">
+            <li>Must be named <strong>technical_report.pdf</strong>. A detailed description of your methodology. All reports will be kept strictly confidential and deleted after NLPCC 2026 (not archived).</li>
+          </ul>
+          <h3>Account Policy</h3>
+          <ul class="org-list">
+            <li>Each team may use only <strong>one account</strong>, and the account name must match the <strong>System Name (ID)</strong> registered during sign-up — otherwise the submission will be invalid.</li>
+            <li>For packaging and format details, refer to the Submission guidelines under <strong>Get Started</strong> on Codabench.</li>
+          </ul>
+        </section>
+
+        <section class="section card" aria-label="Competition Rules">
+          <h2>Competition Rules</h2>
+          <p>The following rules are strictly enforced. Violations will result in disqualification.</p>
+          <p><strong>No use of test set data for development</strong> — Using Phase 1 or Phase 2 test set samples in any form to develop or optimize your detector is strictly prohibited. This includes, but is not limited to, pseudo-labeling and unsupervised methods applied to the test set. Only the officially provided training set may be used, extended exclusively through legitimate data augmentation methods based on the training set. Introducing new external data sources is not allowed.</p>
+          <p><strong>Single-text prediction only</strong> — Each prediction must take a single text as input and output its label. Batch inference across the entire dataset is not permitted; the approach must reflect real-world applicability.</p>
+          <p><strong>No feature extraction on test set</strong> — Rule-based methods may extract features from the training set only. Teams using such approaches must provide a statistical script demonstrating that the features are statistically observable in the training set. If rules cannot be verified on the training set, the submission will be disqualified.</p>
+          <p><strong>No external data or web access</strong> — Using retrieval-augmented generation (RAG), web search, or any form of external data source is prohibited. Calling built-in LLM APIs for text classification is permitted, provided no external information is introduced.</p>
+          <p><strong>LLM API logging</strong> — If your approach involves calling LLM APIs for detection, you must retain complete Q&A logs for potential audit.</p>
         </section>
 
         <section class="section card" aria-label="Tentative Schedule">
@@ -572,9 +592,10 @@
             <tr><td>April 15, 2026</td><td>Release of detailed task guidelines and training data</td></tr>
             <tr><td>May 25, 2026</td><td>Registration deadline</td></tr>
             <tr><td>June 5, 2026</td><td>Phase 1 test data release (open evaluation)</td></tr>
-            <tr><td>June 12, 2026</td><td>Phase 2 test data release (closed evaluation)</td></tr>
-            <tr><td>June 20, 2026</td><td>Deadline for participants to submit results</td></tr>
-            <tr><td>June 30, 2026</td><td>Evaluation results released and call for system reports and conference papers</td></tr>
+            <tr><td>June 15, 2026</td><td>Phase 1 submission deadline (extended)</td></tr>
+            <tr><td>June 16, 2026</td><td>Phase 2 test data release (closed evaluation)</td></tr>
+            <tr><td>June 20, 2026</td><td>Phase 2 submission deadline</td></tr>
+            <tr><td>June 22, 2026</td><td>Final leaderboard released and call for system reports and conference papers</td></tr>
           </table>
         </section>
 
@@ -718,6 +739,8 @@
         <section class="section card" aria-label="最新消息">
           <h2>最新消息</h2>
           <ul class="org-list">
+            <li>[ 2025.06.12 ] 🏆 第二阶段（封闭评测）现已开启！<a class="link" href="https://github.com/NLP2CT/NLPCC-2026-Task6-Detection/tree/main/data/testp2.json" target="_blank" rel="noreferrer">测试数据</a>已开放，提交截止时间为 <strong>2026年6月20日 23:59（GMT+8）</strong>。详细指南已通过邮件发送。</li>
+            <li>[ 2025.06.10 ] ⏰ 第一阶段提交截止时间已延长至 <strong>2026年6月15日 23:59（GMT+8）</strong>。</li>
             <li>[ 2025.06.05 ] 🚀 第一阶段（开放评测）现已开启！<a class="link" href="https://github.com/NLP2CT/NLPCC-2026-Task6-Detection/blob/main/data/testp1.json" target="_blank" rel="noreferrer">测试数据</a>和 <a class="link" href="https://www.codabench.org/competitions/16946" target="_blank" rel="noreferrer">Codabench 评测平台</a>已开放。</li>
             <li>[ 2025.05.08 ] 🔄 我们更新了数据集，将数据内的 MGT 统一修正为 LGT，以和文档对应。其他没有任何改变，原来训练集中的 MGT 即是 LGT（标签为 2）。带来不便和困惑表示抱歉。</li>
             <li>[ 2025.04.15 ] 💡 我们已经发布了具体的任务指引和训练数据 ~</li>
@@ -735,7 +758,7 @@
         <section class="section card" aria-label="数据集">
           <h2>数据集</h2>
           <p>
-            本次任务的训练集主要采样和改编自 CUDRT（TIST 2026）公开数据集（中文子集：基于前25%token续写））；第一阶段测试集（开放评测）现已发布，第二阶段测试集（封闭评测）将在赛事后期陆续发布。评测数据集在 DetectRL 基准（NeurIPS 2024）框架基础上扩展构建，包含多种生成模型和领域数据，以保证评测场景的真实性与挑战性。
+            本次任务的训练集主要采样和改编自 CUDRT（TIST 2026）公开数据集（中文子集：基于前25%token续写））；第一阶段测试集（开放评测）和第二阶段测试集（封闭评测）现已开放。评测数据集在 DetectRL 基准（NeurIPS 2024）框架基础上扩展构建，包含多种生成模型和领域数据，以保证评测场景的真实性与挑战性。
           </p>
           <h3>训练集</h3>
           <p>
@@ -748,6 +771,7 @@
           <ul class="org-list">
             <li>Github: <a class="link" href="https://github.com/NLP2CT/NLPCC-2026-Task6-Detection/tree/main/data" target="_blank" rel="noreferrer">数据文件夹</a></li>
             <li>第一阶段测试数据: <a class="link" href="https://github.com/NLP2CT/NLPCC-2026-Task6-Detection/blob/main/data/testp1.json" target="_blank" rel="noreferrer">testp1.json</a></li>
+            <li>第二阶段测试数据: <a class="link" href="https://github.com/NLP2CT/NLPCC-2026-Task6-Detection/tree/main/data/testp2.json" target="_blank" rel="noreferrer">testp2.json</a></li>
           </ul>
           <h3>数据限制</h3>
           <p>
@@ -762,23 +786,40 @@
         <section class="section card" aria-label="提交与评测">
           <h2>提交与评测</h2>
           <p>
-            本评测任务的提交平台为 <a class="link" href="https://www.codabench.org/competitions/16946" target="_blank" rel="noreferrer">Codabench</a>，现已开放第一阶段评测（开放评测，排行榜验证）；随后将开放第二阶段评测（封闭评测，最终排名）。测试结果文本的具体细节如下：
+            本评测任务的提交平台为 <a class="link" href="https://www.codabench.org/competitions/16946" target="_blank" rel="noreferrer">Codabench</a>。第二阶段（封闭评测，最终排名）现已开启。提交截止时间为 <strong>2026年6月20日 23:59（GMT+8）</strong>。每队最多可提交 <strong>100 次</strong>。提交期间无法查看分数；最终排行榜将于 <strong>2026年6月22日</strong> 前统一公布。
+          </p>
+          <p>
+            每支队伍需将以下三项材料打包提交，缺少任何一项将视为无效结果。为方便打分脚本自动扫描合规性，三项材料须严格按以下名称命名：
           </p>
           <h3>1. 测试结果文件</h3>
           <ul class="org-list">
-            <li>您的测试结果文件必须是一个包含所有样本的 JSON 文件。</li>
-            <li>请确保文本和 id 字段保持不变。</li>
-            <li>JSON 文件中的每个样本应包含以下字段："id"、"text"和"label"（规则：HWT 为 0，LGT 为 1，HLT 为 2）。</li>
+            <li>须命名为 <strong>prediction.json</strong>。包含所有样本的 JSON 文件，保持 <code>id</code> 字段不变。</li>
+            <li>每个样本须包含 <code>id</code>、<code>label</code> 两个字段（HWT → 0，LGT → 1，HLT → 2）。</li>
           </ul>
-          <h3>2. 代码和数据</h3>
+          <h3>2. 代码与数据</h3>
           <ul class="org-list">
-            <li>代码文件夹应包含数据增强、数据处理、模型训练和模型推理所需的所有代码，以及用于训练检测器的完整数据集。</li>
-            <li>请附带一个简单的 README.md 和环境配置文件（如 requirements.txt）。</li>
+            <li>须命名为 <strong>code_and_data.zip</strong>。数据增强、数据处理、模型训练及推理的全部源代码，以及完整的训练数据集。</li>
+            <li>需附带 <code>README.md</code> 和环境配置文件（如 <code>requirements.txt</code>）。</li>
           </ul>
           <h3>3. 技术报告</h3>
-          <p>
-            技术报告应详细描述用于解决任务的方法。所有方案都将保密处理，并在 NLPCC 2026 会议结束后统一删除（不存档）。
-          </p>
+          <ul class="org-list">
+            <li>须命名为 <strong>technical_report.pdf</strong>。详述所采用的方法。所有方案将严格保密，NLPCC 2026 会议结束后统一删除（不存档）。</li>
+          </ul>
+          <h3>账号要求</h3>
+          <ul class="org-list">
+            <li>每队仅限使用<strong>一个账号</strong>提交，账号名称须与报名时的 <strong>System Name (ID) / 系统名称 (ID)</strong> 一致，否则视为无效成绩。</li>
+            <li>打包格式等详见 Codabench <strong>Get Started</strong> → Submission 指引。</li>
+          </ul>
+        </section>
+
+        <section class="section card" aria-label="比赛规则">
+          <h2>比赛规则</h2>
+          <p>以下规则严格禁止，违反者将被取消成绩。</p>
+          <p><strong>禁止使用测试集进行开发</strong> — 不得以任意形式使用第一阶段或第二阶段测试集样本开发或优化检测器。包括但不限于伪标签、对测试集进行无监督方法等。仅可使用官方训练集，扩展方式仅限于合法的基于训练集的数据增强，不可引入新的外部数据源。</p>
+          <p><strong>单文本预测</strong> — 预测环节须以单个文本作为输入、输出标签，不得对整个数据集进行批量处理，须保证方法的实际可用性。</p>
+          <p><strong>禁止对测试集提取特征</strong> — 规则方法仅可在训练集上提取特征。采用此类方案的队伍须提供统计脚本，证明特征在训练集上可被统计性地观测到。若无法在训练集上验证，将取消成绩。</p>
+          <p><strong>禁止外部数据与联网</strong> — 禁止使用 RAG（检索增强生成）、联网搜索或任何形式的外部数据源。允许调用大模型 API 直接进行文本判别，但不得引入外部信息。</p>
+          <p><strong>大模型 API 日志保留</strong> — 如调用大模型 API 进行检测，须保留完整的问答日志，以备可能的核查。</p>
         </section>
 
         <section class="section card" aria-label="初步日程">
@@ -789,9 +830,10 @@
             <tr><td>2026年4月15日</td><td>发布详细的任务指南和训练数据</td></tr>
             <tr><td>2026年5月25日</td><td>报名截止</td></tr>
             <tr><td>2026年6月5日</td><td>第一阶段测试数据发布（开放评测）</td></tr>
-            <tr><td>2026年6月12日</td><td>第二阶段测试数据发布（封闭评测）</td></tr>
-            <tr><td>2026年6月20日</td><td>参赛队伍提交评测结果截止</td></tr>
-            <tr><td>2026年6月30日</td><td>公布评测结果，征集系统报告和会议论文</td></tr>
+            <tr><td>2026年6月15日</td><td>第一阶段提交截止（已延长）</td></tr>
+            <tr><td>2026年6月16日</td><td>第二阶段测试数据发布（封闭评测）</td></tr>
+            <tr><td>2026年6月20日</td><td>第二阶段提交截止</td></tr>
+            <tr><td>2026年6月22日</td><td>最终排行榜公布，征集系统报告和会议论文</td></tr>
           </table>
         </section>
 
