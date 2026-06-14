@@ -88,7 +88,7 @@ The official evaluation metric for this task is the macro-averaged F1-Score.
 
 ## Submission and Evaluation
 
-The submission platform for this evaluation task is [Codabench](https://www.codabench.org/competitions/16946). Phase 2 (closed evaluation, final ranking) will open on **June 16, 2026, 00:00 (GMT+8)**. The submission deadline is **June 20, 2026, 23:59 (GMT+8)**. Each team may submit up to **100 times** (the final result will be based on the last submission). Scores will not be available during the submission period; the final leaderboard will be publicly released by **June 22, 2026**.
+The submission platform for this evaluation task is [Codabench](https://www.codabench.org/competitions/16946). Phase 2 (closed evaluation, final ranking) will open on **June 16, 2026, 00:00 (GMT+8)**. The submission deadline is **June 20, 2026, 23:59 (GMT+8)**. Each team may submit up to **100 times** (the final ranking will be based exclusively on the last submission). Teams may also delete their own historical submissions to avoid confusion. Scores will not be available during the submission period; the final leaderboard will be publicly released by **June 22, 2026**.
 
 Each team must submit the following three items packaged together. Submissions missing any component will be considered invalid. To facilitate automated compliance checks, the three items must be named exactly as follows:
 
@@ -96,11 +96,11 @@ Each team must submit the following three items packaged together. Submissions m
 
 2. **Code and data** — must be named `code_and_data.zip`. All source code for data augmentation, processing, model training, and inference, along with the complete training dataset (including augmented or processed samples). Include a `README.md` and an environment configuration file (e.g., `requirements.txt`).
 
-3. **Technical report** — must be named `technical_report.pdf`. A detailed description of your methodology. All reports will be kept strictly confidential and deleted after NLPCC 2026 (not archived).
+3. **Technical report** — must be named `technical_report.pdf`. A detailed description of your methodology. There is no language restriction; you may use either Chinese or English. All reports will be kept strictly confidential and deleted after NLPCC 2026 (not archived).
 
 **Account Policy**
 
-- Each team may use only **one account**, and the account name must match the **System Name (ID)** registered during sign-up — otherwise the submission will be invalid.
+- Each team may use only **one account**, and the account name must match the **System Name (ID)** registered during sign-up. If your Codabench account name does not match your registered System Name (ID), simply name the outermost ZIP archive with your registered **System Name (ID)** and ensure you submit using the exact same email address you provided during registration. Our team will verify your submission by cross-referencing your registered email and the ZIP archive name.
 - For packaging and format details, refer to the Submission guidelines under **Get Started** on Codabench.
 
 **Important Notes**
