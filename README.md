@@ -2,6 +2,8 @@
 
 [中文版本 (Chinese Version)](README_zh.md)
 
+> **Official Website:** [https://nlp2ct.github.io/NLPCC-2026-Task6-Detection/](https://nlp2ct.github.io/NLPCC-2026-Task6-Detection/)
+
 ## Conference Information
 - **Location:** Macau, China
 - **Dates:** November 3-5, 2026

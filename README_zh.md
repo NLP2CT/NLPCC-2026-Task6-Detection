@@ -2,6 +2,8 @@
 
 [English Version](README.md)
 
+> **任务官网:** [https://nlp2ct.github.io/NLPCC-2026-Task6-Detection/](https://nlp2ct.github.io/NLPCC-2026-Task6-Detection/)
+
 ## 会议信息
 - **地点:** 中国澳门 (Macau, China)
 - **日期:** 2026年11月3-5日
