@@ -19,7 +19,7 @@ Following the success of the 1st Shared Task on LLM-Generated Text Detection (NL
 
 ## Latest News
 
-- [ 2025.06.12 ] 🏆 Phase 2 (closed evaluation) will officially open on **June 16, 2026, 00:00 (GMT+8)**. The Phase 1 submission deadline has been extended to **June 15, 2026, 23:59 (GMT+8)**.
+- [ 2025.06.16 ] 🏆 Phase 2 (closed evaluation) is now open! The [test data](https://github.com/NLP2CT/NLPCC-2026-Task6-Detection/tree/main/data/testp2.json) is available. Submission deadline: **June 20, 2026, 23:59 (GMT+8)**.
 - [ 2025.06.05 ] 🚀 Phase 1 (open evaluation) is now open! The [test data](https://github.com/NLP2CT/NLPCC-2026-Task6-Detection/blob/main/data/testp1.json) and [Codabench evaluation platform](https://www.codabench.org/competitions/16946) are available.
 - [ 2025.05.08 ] 🔄 We have updated the dataset to unify the label "MGT" to "LGT" to match the documentation. No other changes were made. The original MGT in the training set is equivalent to LGT (label=2). We apologize for any inconvenience and confusion caused.
 - [ 2025.04.15 ] 💡 We have released the detailed task guidelines and training data ~
@@ -47,7 +47,7 @@ The Phase 1 test data for open evaluation is now available:
 
 **Test Set (Phase 2)**
 
-The Phase 2 test data for closed evaluation will be available starting June 16, 2026:
+The Phase 2 (closed evaluation) test data is now available:
 
 - Test data: https://github.com/NLP2CT/NLPCC-2026-Task6-Detection/tree/main/data/testp2.json
 
@@ -88,7 +88,7 @@ The official evaluation metric for this task is the macro-averaged F1-Score.
 
 ## Submission and Evaluation
 
-The submission platform for this evaluation task is [Codabench](https://www.codabench.org/competitions/16946). Phase 2 (closed evaluation, final ranking) will open on **June 16, 2026, 00:00 (GMT+8)**. The submission deadline is **June 20, 2026, 23:59 (GMT+8)**. Each team may submit up to **100 times** (the final ranking will be based exclusively on the last submission). Teams may also delete their own historical submissions to avoid confusion. Scores will not be available during the submission period; the final leaderboard will be publicly released by **June 22, 2026**.
+The submission platform for this evaluation task is [Codabench](https://www.codabench.org/competitions/16946). Phase 2 (closed evaluation, final ranking) is now open. The submission deadline is **June 20, 2026, 23:59 (GMT+8)**. Each team may submit up to **100 times** (the final ranking will be based exclusively on the last submission, enforced by Force Last). Scores will not be available during the submission period; the final leaderboard will be publicly released by **June 22, 2026**.
 
 Each team must submit the following three items packaged together. Submissions missing any component will be considered invalid. To facilitate automated compliance checks, the three items must be named exactly as follows:
 
