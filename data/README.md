@@ -4,7 +4,7 @@
 
 | File | Description |
 |------|-------------|
-| `train_data.json` | Training set, containing `ID`, `HWT` (original text), and `HLT` (rewritten text) fields |
+| `train_data.json` | Training set, containing `ID`, `HWT` (original text), `LGT` (generated text), and `HLT` (refined text) fields |
 | `testp1.json` | Test phase 1 data, containing `id`, `text`, and `label` (label is null) |
 | `testp2.json` | Test phase 2 data, containing `id`, `text`, and `label` (label is null) |
 | `testp1_testing_label.json` | Ground truth labels for test phase 1, containing `id` and `label` |
